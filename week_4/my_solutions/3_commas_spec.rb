@@ -1,13 +1,10 @@
-require_relative "[Your file name here]" 
-#=> Make sure you change this to the name of your code file! Save that file
-# into this repo. 
-
+require_relative "u2_w4_c3_comma"
 
 def random_num(min, max)
    rand(max - min + 1) + min
 end
 
-describe "seperate_comma" do
+describe "separate_comma" do
    it "returns no comma, when the integer is smaller than 1000" do
       separate_comma(random_num(0, 999)).should match /^\d{1,3}$/
    end
