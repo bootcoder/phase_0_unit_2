@@ -45,12 +45,15 @@ end
 
 def separate_comma(num)
 	num_string = num.to_s
-	i = num_string.length
-	return num_string if i <= 3
-	while i > 0 do
-			num_string.insert(0-(i+1),",") if i % 3 == 0
-			i-=1
+	num_length = num_string.length
+	
+	return num_string if num_length <= 3
+	
+	while num_length > 0 do
+		num_string.insert(0-(num_length+1),",") if num_length % 3 == 0
+		num_length-=1
 	end
+	
 	num_string.slice!(0) if num_string[0].include? ","
 	num_string
 end
