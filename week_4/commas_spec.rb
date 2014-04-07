@@ -1,7 +1,4 @@
-require_relative "[Your file name here]" 
-#=> Make sure you change this to the name of your code file! Save that file
-# into this directory. 
-
+require_relative "u2_w4_c3_comma"
 
 def random_num(min, max)
    rand(max - min + 1) + min

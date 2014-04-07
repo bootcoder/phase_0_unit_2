@@ -22,7 +22,7 @@ describe 'create_groups' do
 	end
 
 	it "returns the correct 2D array" do
-		create_groups(fence_lizards).should eq [["Sebastian Belmar", "Eiko Seino", "Eoin McMillan", "Aki Suzuki"], ["William Butler Bushyhead", "Jacob Persing", "Jon Pabico", "Shawn Seibert"], ["Christiane Kammerl", "Dominick Oddo", "Anup Pradhan", "Adam Ryssdal"], ["Parjam Davoody", "Samuel Davis", "Hunter T Chapman", "Andra Lally"], ["Yuzu Saijo", "Allison Wong", "CJ Jameson", "Christopher Aubuchon"], ["Clark Hinchcliff", "Dong Kevin Kang", "Adam Dziuk", "Devin A Johnson"]]
+		create_groups(fence_lizards).should eq [["Shawn Seibert", "Eoin McMillan", "Hunter T Chapman", "Aki Suzuki"], ["Yuzu Saijo", "Jon Pabico", "Parjam Davoody", "William Butler Bushyhead"], ["Christopher Aubuchon", "Dong Kevin Kang", "Anup Pradhan", "Adam Ryssdal"], ["Samuel Davis", "Sebastian Belmar", "Jacob Persing", "Andra Lally"], ["Christiane Kammerl", "Allison Wong", "CJ Jameson", "Clark Hinchcliff"], ["Devin A Johnson", "Eiko Seino", "Adam Dziuk", "Dominick Oddo"]]
 	end
 
 end

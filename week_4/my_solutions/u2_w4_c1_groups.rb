@@ -18,13 +18,13 @@
 
 
 # 3. Initial Solution
-
-fence_lizards = ["Adam Dziuk", "Adam Ryssdal", "Aki Suzuki", "Allison Wong", 
-"Andra Lally", "Anup Pradhan", "CJ Jameson", "Christopher Aubuchon", "Clark Hinchcliff",
-"Devin A Johnson", "Dominick Oddo", "Dong Kevin Kang", "Eiko Seino", "Eoin McMillan", 
-"Hunter T Chapman", "Jacob Persing", "Jon Pabico", "Parjam Davoody", "Samuel Davis", 
-"Sebastian Belmar", "Shawn Seibert", "William Butler Bushyhead", "Yuzu Saijo", 
-"Christiane Kammerl"]
+fence_lizards = ["Adam Dziuk", "Adam Ryssdal", "Aki Suzuki", "Allison Wong", "Andra Lally", "Anup Pradhan", "CJ Jameson", "Christopher Aubuchon", "Clark Hinchcliff", "Devin A Johnson", "Dominick Oddo", "Dong Kevin Kang", "Eiko Seino", "Eoin McMillan", "Hunter T Chapman", "Jacob Persing", "Jon Pabico", "Parjam Davoody", "Samuel Davis", "Sebastian Belmar", "Shawn Seibert", "William Butler Bushyhead", "Yuzu Saijo", "Christiane Kammerl"]
+# fence_lizards = ["Adam Dziuk", "Adam Ryssdal", "Aki Suzuki", "Allison Wong", 
+# "Andra Lally", "Anup Pradhan", "CJ Jameson", "Christopher Aubuchon", "Clark Hinchcliff",
+# "Devin A Johnson", "Dominick Oddo", "Dong Kevin Kang", "Eiko Seino", "Eoin McMillan", 
+# "Hunter T Chapman", "Jacob Persing", "Jon Pabico", "Parjam Davoody", "Samuel Davis", 
+# "Sebastian Belmar", "Shawn Seibert", "William Butler Bushyhead", "Yuzu Saijo", 
+# "Christiane Kammerl"]
 
 def create_groups(input)
   input.sort!
@@ -44,7 +44,7 @@ end
 # 4. Refactored Solution
 
 def create_groups(input)
-  input.sort!
+  # input.sort!
   unit_groups = []
   3.times { |n|
 	unit_groups = input.shuffle(random: Random.new(n)).each_slice(4).to_a
