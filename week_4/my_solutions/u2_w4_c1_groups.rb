@@ -19,7 +19,12 @@
 
 # 3. Initial Solution
 
-fence_lizards = ["Adam Dziuk", "Adam Ryssdal", "Aki Suzuki", "Allison Wong", "Andra Lally", "Anup Pradhan", "CJ Jameson", "Christopher Aubuchon", "Clark Hinchcliff", "Devin A Johnson", "Dominick Oddo", "Dong Kevin Kang", "Eiko Seino", "Eoin McMillan", "Hunter T Chapman", "Jacob Persing", "Jon Pabico", "Parjam Davoody", "Samuel Davis", "Sebastian Belmar", "Shawn Seibert", "William Butler Bushyhead", "Yuzu Saijo", "Christiane Kammerl"]
+fence_lizards = ["Adam Dziuk", "Adam Ryssdal", "Aki Suzuki", "Allison Wong", 
+"Andra Lally", "Anup Pradhan", "CJ Jameson", "Christopher Aubuchon", "Clark Hinchcliff",
+"Devin A Johnson", "Dominick Oddo", "Dong Kevin Kang", "Eiko Seino", "Eoin McMillan", 
+"Hunter T Chapman", "Jacob Persing", "Jon Pabico", "Parjam Davoody", "Samuel Davis", 
+"Sebastian Belmar", "Shawn Seibert", "William Butler Bushyhead", "Yuzu Saijo", 
+"Christiane Kammerl"]
 
 def create_groups(input)
   input.sort!
@@ -48,6 +53,30 @@ def create_groups(input)
 end
 
 
+# Refactored Group Solution
+# Thanks to Butler Bushyhead for guiding us
+
+def get_groups(array)
+	master_array = []
+	3.times do 
+		split_array = array.shuffle.each_slice(4).to_a
+		if array.length % 4 != 0
+		leftovers = split_array.pop
+		end
+		split_array[0].push(leftovers[0])
+		split_array[1].push(leftovers[0]) unless leftovers.empty? == true
+		split_array[2].push(leftovers[0]) unless leftovers.empty? == true
+		master_array.push(split_array)
+	end
+	print "Unit 1 groups are " + master_array[0].to_s
+	puts " "
+	print "Unit 2 groups are " + master_array[1].to_s
+	puts " "
+	print "Unit 3 groups are " + master_array[2].to_s
+
+	master_array
+end
+
 
 
 
@@ -56,15 +85,41 @@ end
 
 
 # bit over zealous I suppose 
-# please find the driver code in RSPEC format located in 
+# I wrote the driver code in RSPEC format located in 
 # u2_w4_c1_groups_spec.rb
+# 
+# # test 1 
+# should be a function
 
+# test 2
+# should be passed a single array
+
+# test 3
+# should return 2d array with group members inside.
+
+# RSPEC
+
+# require_relative "u2_w4_c1_groups"
+
+# describe 'create_groups' do
+# 	let!(:fence_lizards) { ["Adam Dziuk", "Adam Ryssdal", "Aki Suzuki", "Allison Wong", "Andra Lally", "Anup Pradhan", "CJ Jameson", "Christopher Aubuchon", "Clark Hinchcliff", "Devin A Johnson", "Dominick Oddo", "Dong Kevin Kang", "Eiko Seino", "Eoin McMillan", "Hunter T Chapman", "Jacob Persing", "Jon Pabico", "Parjam Davoody", "Samuel Davis", "Sebastian Belmar", "Shawn Seibert", "William Butler Bushyhead", "Yuzu Saijo", "Christiane Kammerl"] }
+# 	it "is defined" do
+# 		defined?(create_groups).should eq "method"
+# 	end
+
+# 	it "requires a single argument" do
+# 		method(:create_groups).arity.should eq 1
+# 	end
+
+# 	it "returns the correct 2D array" do
+# 		create_groups(fence_lizards).should eq [["Sebastian Belmar", "Eiko Seino", "Eoin McMillan", "Aki Suzuki"], ["William Butler Bushyhead", "Jacob Persing", "Jon Pabico", "Shawn Seibert"], ["Christiane Kammerl", "Dominick Oddo", "Anup Pradhan", "Adam Ryssdal"], ["Parjam Davoody", "Samuel Davis", "Hunter T Chapman", "Andra Lally"], ["Yuzu Saijo", "Allison Wong", "CJ Jameson", "Christopher Aubuchon"], ["Clark Hinchcliff", "Dong Kevin Kang", "Adam Dziuk", "Devin A Johnson"]]
+# 	end
+
+# end
 
 
 # 5. Reflection 
-# 
-# things to ask about
-# 
+
 
 
 # What parts of your strategy worked? What problems did you face?
@@ -91,8 +146,8 @@ end
 # new_names = names.split(",")
 # 
 # it's not pretty but it works so....
-
-
+#
+#
 # What concepts are you having trouble with, or did you just figure something out? If so, what?
 # see above.
 # 
