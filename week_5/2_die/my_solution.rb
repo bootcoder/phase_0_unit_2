@@ -67,7 +67,7 @@
 class Die
 
   def initialize(sides)
-  	raise ArgumentError if sides.length < 1 
+  	raise ArgumentError.new("Put some strings in there silly goose!") if sides.length < 1 
 		@sides = sides
   end
   
@@ -80,7 +80,7 @@ class Die
   end
   
   def roll
-		@sides.to_a.uniq.sample
+		@sides.sample
   end
 
 end
