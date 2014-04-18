@@ -114,7 +114,7 @@
 # 4. Refactored Solution
 
 class CreditCard
-	
+
 	def initialize(num)
 		raise ArgumentError.new("Invalid CC Number") if num.to_s.length != 16
 		@num = num
@@ -217,4 +217,3 @@ p card.check_card == false
 # 
 # writing out 10 lines of code for a function that I know can be done better. 
 # having a green rspec and looking at my code thinking "Damn that's ugly"
-
